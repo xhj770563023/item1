@@ -1,0 +1,251 @@
+@function px2rem($px,$rem:75){
+    @return $px/$rem*1rem;
+}
+body{
+    font-size: 12px;
+}
+html,body{
+    height: 100%;
+}
+$com-color: #FF4891;
+#app{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+header{
+    height: px2rem(80);
+    background-image: url(../images/pic_01.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+}
+section{
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+   .section_left{
+       width: 19.3%;
+       .left_menu-wrap{
+           height: 100%;
+       }
+       .left_menu-wrap>div{
+        min-height: 100.1%;
+
+       }
+       h2{
+        text-align: center;
+        height: px2rem(75 );
+        font-size: px2rem(36 );
+       }
+       ul{
+           width: 100%;
+           background-color: #f8f8f8;
+           li{
+            width: 100%;
+            line-height: px2rem(78);
+            text-align: center;
+            font-size: px2rem(24 );
+            &.active{
+                background-color: pink;
+                .active:after{
+                    content: "";
+                    position: absolute;
+                    left:0;
+                    top:20%;
+                    width: 0;
+                    height: 0;
+                    background-color: #fb5bb6;
+                }
+            }
+           }
+       }
+   }
+    .section_right{
+        flex: 1;
+        overflow: hidden;
+    .section_right-top{
+        position: relative;
+        height: px2rem(73);
+        
+        .right-top_menu-wrap>div{
+            position: absolute;
+            .contents{
+                display: flex;
+                flex-direction: row;
+                    span{
+                        flex: 1;
+                        line-height: px2rem(73);
+                        width: px2rem(150);
+                        text-align: center;
+                    &.active{
+                        color: #fb5bb6;
+                    }
+                    }
+                }
+            }
+        }
+    }
+    .section_right_bottom{
+        overflow: hidden;
+        height: 100%;
+
+        .right_bottom_wrap{
+            height: 100%;
+        }
+        .right_bottom_wrap>div{
+            min-height: 100.1%;
+            .contentss{
+                display: flex;
+                flex-direction: column;
+                .item_container{
+                    flex: 1;
+                    width: px2rem(552);
+                    margin: 0 auto;
+                    height: 100%;
+                    
+                    .item_menu{
+                        height: px2rem(88);
+                        
+                        h2{
+                            box-sizing: border-box;
+                            padding-left: px2rem(26);
+                            padding-top: px2rem(26);
+                            font-size: px2rem(32);
+                            line-height: px2rem(60);
+                            border-bottom: 1px solid #333;
+                            width: px2rem(552);
+                            margin: 0 auto;
+                            
+                        }
+                        
+                    }
+                }
+                .shop_list{
+                    display: flex;
+                    box-sizing: border-box;
+                    padding-top: px2rem(25);
+                    margin: 0 auto;
+                    border-bottom: 1px solid #333;
+                    justify-content: space-between;
+                    width: px2rem(552);
+                    height: px2rem(250);
+                    .referral{
+                        h3{
+                            font-size: px2rem(32);
+                            color: #000;
+                            // overflow: hidden;
+                            // text-overflow: ellipsis;
+                            // white-space: nowrap;
+                        }
+                        .price_img{
+                            display: flex;
+                            justify-content: space-between;
+                            margin-top: px2rem(20);
+                            .price{
+                              
+                                dt{
+                                    color: #ff4891;
+                                }
+                                dd{
+                                    color: #969696;
+                                }
+                               
+                            }
+                            .shopCar{
+                                .shopCar_img{
+                                    display: none;
+                                    &.active{
+                                        display: block;
+                                     }
+                                }
+                                .shopCar_btn{
+                                    display: flex;
+                                    justify-content: center;
+                                    display: none;
+                                    &.active{
+                                       display: block;
+                                    }
+                                    span{
+                                        display:inline-block;
+                                        width: px2rem(50);
+                                        height:px2rem(50);
+                                        border-radius: 50%;
+                                        border: 1px solid #000;
+                                        text-align: center;
+                                        line-height: px2rem(50);
+                                    }
+                                    .add_btn{
+                                        background-color: #ff4891;
+                                        color:#fff;
+                                    }
+                                    .b{
+                                        display:inline-block;
+                                        width: px2rem(50);
+                                        height:px2rem(50);
+                                        text-align: center;
+                                        line-height: px2rem(50);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+footer {
+
+    height: px2rem(100);
+    padding-top: px2rem(10);
+    box-sizing: border-box;
+    // background-color: #000;
+    border-top: 1px solid #CCC;
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+
+    >div {
+        flex: 1;
+        position: relative;
+        >div {
+            span {
+                font-size: px2rem(24);
+            }
+
+            img {
+                display: block;
+                width: px2rem(50);
+                margin: 0 auto;
+
+                &:last-child {
+                    display: none;
+                }
+            }
+        }
+        #shopcar-num-tip {
+            display: none;
+            position: absolute;
+            right: px2rem(28);
+            top: px2rem(-4);
+           
+            min-width: 1.2em;
+            height: 1.2em;
+            line-height: 1.2em;
+            border: 1px solid #FFF;
+            border-radius: 100%;
+            background-color: $com-color;
+            text-align: center;
+            color: #FFF;
+        }
+        .active {
+            img {
+                display: none;
+                &:last-child {
+                    display: block;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.f-l {
+    float: left;
+}
+
+.f-r {
+    float: right;
+}
+
+.clearfix:after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
